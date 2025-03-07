@@ -63,6 +63,12 @@ Authentication header required for protected routes
 | POST   | `/approve/:id` | Yes           | admin, bank   | id (URL param) | Approve KYC status for specified user |
 | POST   | `/reject/:id`  | Yes           | admin, bank   | id (URL param) | Reject KYC status for specified user  |
 
+### Hierarchy Visualization `/hierarchy`
+
+| Method | Endpoint       | Auth Required | Parameters             | Description                                |
+| ------ | -------------- | ------------- | ---------------------- | ------------------------------------------ |
+| GET    | `/:rootUserId` | Yes           | rootUserId (URL param) | Get hierarchical transaction visualization |
+
 #### Complete Registration Details
 
 The `/complete-registration/:id` endpoint accepts:

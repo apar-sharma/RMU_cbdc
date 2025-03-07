@@ -29,6 +29,7 @@ const transactionRouter = require("../routes/transactionRoutes");
 const imageRouter = require("../routes/imageRoutes");
 const kycRouter = require("../routes/kycRoutes");
 const mintRouter = require("../routes/mintRoutes");
+const hierarchyRouter = require("../routes/hierarchyRoutes");
 
 // middleware
 const notFoundMiddleware = require("../middleware/not-found");
@@ -45,11 +46,6 @@ const errorHandlerMiddleware = require("../middleware/error-handler");
 app.use(xss());
 app.use(mongoSanitize());
 
-// app.use(cors({
-//   origin: true,
-//   credentials: true,
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
-// }));
 app.use(cors());
 // Remove these lines since they're now defined above with increased limits
 // app.use(express.json());
@@ -62,6 +58,7 @@ app.use("/api/v1/transactions", transactionRouter);
 app.use("/api/v1/images", imageRouter);
 app.use("/api/v1/kyc", kycRouter);
 app.use("/api/v1/mint", mintRouter);
+app.use("/api/v1/hierarchy", hierarchyRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
